@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ad Banner Landing (Dark)</title>
+  <style>
+    :root{
+      --bg:#0b1220; --ink:#cfe3ff; --muted:#9db7e6; --line:#2a3b5e;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:radial-gradient(1200px 800px at 50% -10%, rgba(77,211,255,.08), transparent), var(--bg);color:var(--ink);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Noto Sans', Arial, 'Helvetica Neue', sans-serif;}
+
+    /* Center one ad box on the page */
+    .wrap{min-height:100dvh;display:grid;place-items:center;padding:16px}
+
+    /* Single banner ad placeholder */
+    .ad-unit{position:relative;display:flex;align-items:center;justify-content:center;width:min(95vw, 728px);aspect-ratio:728/90;border:2px dashed #35507a;border-radius:16px;background:linear-gradient(180deg, rgba(21,33,58,.9), rgba(13,22,39,.9));color:var(--muted);overflow:hidden;}
+    .ad-unit .label{position:absolute;top:8px;left:8px;font-size:.7rem;background:#0a1426;border:1px solid #274060;border-radius:999px;padding:2px 8px;color:#87e6ff}
+    .ad-unit .size{font-weight:600;opacity:.9}
+
+    /* Optional: on very small screens, switch to 320×50 visual */
+    @media (max-width:430px){
+      .ad-unit{width:min(94vw, 360px);aspect-ratio:320/50}
+      .ad-unit .label::after{content:" • MOBILE"}
+      .ad-unit .size{font-size:.95rem}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <!-- Replace this .ad-unit with your ad network code (AdSense, etc.) -->
+    <div class="ad-unit" aria-label="Banner Ad">
+      <span class="label">LEADERBOARD</span>
+      <div class="size">728×90 (auto scales)</div>
+    </div>
+  </main>
+</body>
+</html>
